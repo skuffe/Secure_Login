@@ -390,6 +390,15 @@ a:hover {
 .row-fluid {
   width: 100%;
   *zoom: 1;
+  position:relative;
+  left:-180px;
+}
+
+.row-fluid1 {
+  width: 100%;
+  *zoom: 1;
+  position:relative;
+  right:200px;
 }
 
 .row-fluid:before,

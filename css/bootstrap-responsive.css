@@ -194,7 +194,8 @@
   }
   .row-fluid {
     width: 100%;
-    *zoom: 1;
+    *zoom: 1
+	margin-left: 200px;
   }
   .row-fluid:before,
   .row-fluid:after {
@@ -210,7 +211,8 @@
     float: left;
     width: 100%;
     min-height: 30px;
-    margin-left: 2.564102564102564%;
+/*    margin-left: 2.564102564102564%; */
+    margin-left:px;
     *margin-left: 2.5109110747408616%;
     -webkit-box-sizing: border-box;
        -moz-box-sizing: border-box;
@@ -347,8 +349,8 @@
     *margin-left: 28.0987452264048%;
   }
   .row-fluid .offset3:first-child {
-    margin-left: 25.641025641025642%;
-    *margin-left: 25.53464266230224%;
+    margin-left: 33.641026%;
+    *margin-left: 33.641026%;
   }
   .row-fluid .offset2 {
     margin-left: 19.65811965811966%;

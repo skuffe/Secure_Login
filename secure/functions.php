@@ -15,8 +15,6 @@ function sec_session_start() {
 }
 
 
-
-
 //SECURE LOGIN FUNCTION
 function login($email, $password, $mysqli) {
    // Using prepared Statements means that SQL injection is not possible. 
@@ -33,6 +31,7 @@ function login($email, $password, $mysqli) {
          if(checkbrute($user_id, $mysqli) == true) { 
             // Account is locked
             // Send an email to user saying their account is locked
+            lockout($user_id, $mysqli);
             return false;
          } else {
          if($db_password == $password) { // Check if the password in the database matches the password the user submitted. 
@@ -70,7 +69,6 @@ function checkbrute($user_id, $mysqli) {
    $now = time();
    // All login attempts are counted from the past 2 hours. 
    $valid_attempts = $now - (2 * 60 * 60); 
- 
    if ($stmt = $mysqli->prepare("SELECT time FROM login_attempts WHERE user_id = ? AND time > '$valid_attempts'")) { 
       $stmt->bind_param('i', $user_id); 
       // Execute the prepared query.
@@ -85,6 +83,22 @@ function checkbrute($user_id, $mysqli) {
    }
 }
 
+function lockout($user_id, $mysqli) {
+    $mysqli->query("UPDATE members SET locked='1' WHERE id=$user_id;");
+}
+
+function checklocked($email, $mysqli) {
+      $query = "SELECT locked FROM members WHERE email='$email'";
+      if ($result = mysqli_query($mysqli, $query)) {
+        while ($row = mysqli_fetch_row($result)) {
+          if ($row[0] == '1') {
+ 	  return true;
+	  } else {
+	  return false;
+	  }
+        }
+      }
+}
 
 //CREATE LOGIN CHECK FUNCTION - Logged Status
 function login_check($mysqli) {

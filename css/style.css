@@ -4,8 +4,9 @@
 }
 /*FORMATING LAYOUT*/
 body {
-  background-image: url(../img/shattered.png);
+  background-image: url(../img/nat.jpg);
   background-attachment: fixed;
+  background-repeat:no-repeat;
   text-shadow: 1px 1px 1px #fff;
 }
 #mainwrapper {
@@ -13,7 +14,7 @@ body {
   margin-bottom: 200px;
 }
 #content {
-  margin-top: 200px;
+  margin-top: 45px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -24,6 +25,7 @@ h1,
 h4,
 p {
   text-align: center;
+  color:#ffffff
 }
 .error {
   width: 170px;
