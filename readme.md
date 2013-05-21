@@ -1,11 +1,7 @@
-
-
-
-This is a showcase of a secure login & registration form. It sends the password in a 512sha encrypted hash to the mysql database. 
-
 **************
 
-Demo: http://peyotedesign.ch/securelogin/
+Demo: http://yoogle.dk
+Secure page: http://yoogle.dk/secure.php
 
 **************
 
@@ -23,20 +19,10 @@ Easy to configure:
 - Two tables are needed. 
 - Configure your db_connect.php with your database and user settings.
 
-=> Visit the settings page for help: http://www.peyotedesign.ch/securelogin/settings.php
-
 ****************************
 
-This should work!
+Credits goes out to the tutorial on http://www.wikihow.com/Create-a-Secure-Login-Script-in-PHP-and-MySQL.
 
-May the force be with you!
-
-
-
-
-
-
-Credits goes out to the tutorial on http://www.wikihow.com/Create-a-Secure-Login-Script-in-PHP-and-MySQL. Thank you guys!
 
 
 
